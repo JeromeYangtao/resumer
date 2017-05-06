@@ -1,4 +1,3 @@
-
 <template>
   <div class="page" id="app">
     <header>
@@ -17,6 +16,7 @@ import './assets/reset.css'
 import Topbar from './components/Topbar'
 import ResumeEditor from './components/ResumeEditor'
 import ResumePreview from './components/ResumePreview'
+import icons from './assets/icons'
 
 export default {
   name: 'app',
@@ -26,8 +26,10 @@ export default {
     }
 
   },
-  components: {Topbar, ResumeEditor, ResumePreview}
-
+  components: {Topbar, ResumeEditor, ResumePreview},
+  created(){
+    document.body.insertAdjacentHTML('afterbegin', icons) 
+  }
 }
 </script>
 
@@ -65,6 +67,13 @@ export default {
     background:#ffffff;
     margin-left: 16px;
     box-shadow:0 1px 3px 0 rgba(0,0,0,0.25);
+  }
+  svg.icon{
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+    /*vertical-align: -0.1em;*/
+    font-size:16px;
   }
   
 </style>
