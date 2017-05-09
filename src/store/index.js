@@ -1,6 +1,5 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
-
 Vue.use(Vuex)
 
 // 全局数据源

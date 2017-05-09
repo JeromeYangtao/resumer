@@ -13,12 +13,12 @@
 <script>
 import './assets/reset.css'
 
-import Topbar from './components/Topbar'
-import ResumeEditor from './components/ResumeEditor'
-import ResumePreview from './components/ResumePreview'
-import icons from './assets/icons'
+import Topbar from './components/Topbar.vue'
+import ResumeEditor from './components/ResumeEditor.vue'
+import ResumePreview from './components/ResumePreview.vue'
+import icons from './assets/icons.js'
 
-import store from './store/index'
+import store from './store/index.js'
 
 export default {
   name: 'app',
