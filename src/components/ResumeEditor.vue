@@ -11,9 +11,12 @@
         </li>
       </ol>
     </nav>
+
     <ol class="panels">
-     <li v-for="item in resume.config" v-show="item.field === selected">
-       <div v-if="resume[item.field] instanceof Array">
+      <!--兼容数组和对象-->
+      <li v-for="item in resume.config" v-show="item.field === selected">
+        <!--内容以数组形式储存时-->
+        <div v-if="resume[item.field] instanceof Array">
           <div class="subitem" v-for="subitem in resume[item.field]">
             <div class="resumeField" v-for="(value,key) in subitem">
               <label> {{key}} </label>
@@ -22,10 +25,11 @@
             <hr>
           </div>
         </div>
-       <div v-else class="resumeField" v-for="(value,key) in resume[item.field]">
-         <label> {{key}} </label>
-         <input type="text" v-model="resume[item.field][key]">
-       </div>
+        <!--内容以对象形式储存时-->
+        <div v-else class="resumeField" v-for="(value,key) in resume[item.field]">
+          <label> {{key}} </label>
+          <input type="text" v-model="resume[item.field][key]">
+        </div>
       </li>
     </ol>   
    </div>

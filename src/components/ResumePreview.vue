@@ -9,6 +9,27 @@
       </p>
     </section>
 
+    <section data-name="education" v-show="resume.education">
+      <h2>毕业院校</h2>
+      <ol>
+        <li v-for="item in resume.education">
+          <h3>{{item.school}}
+            <span v-show="item.content">- {{item.content}}</span>
+          </h3>
+        </li>
+      </ol>
+    </section>
+
+    <section data-name="projects" v-show="resume.education">
+      <h2>项目经历</h2>
+      <ol>
+        <li v-for="item in resume.projects">
+          <h3>{{item.name}}</h3>
+          <p v-show="item.content"> {{item.content}} </p>
+        </li>
+      </ol>
+    </section>
+
     <section data-name="workHistory" v-show="resume.workHistory">
       <h2>工作经历</h2>
       <ol>
@@ -19,15 +40,24 @@
       </ol>
     </section>
 
-    <section data-name="education" v-show="resume.education">
-      <h2>毕业院校</h2>
+    <section data-name="awards" v-show="resume.awards">
+      <h2>获奖情况</h2>
       <ol>
-        <li v-for="item in resume.education">
-          <h3>{{item.school}}
-            <span v-show="item.content">- {{item.content}}</span>
-          </h3>
+        <li v-for="item in resume.awards">
+          <h3>{{item.name}}</h3>
+          <p v-show="item.content"> {{item.content}} </p>
         </li>
       </ol>
+    </section>
+
+    <section data-name="contacts" v-show="resume.contacts">
+      <h2>联系方式</h2>
+      <table>
+        <tr v-for="item in resume.contacts">
+          <td>{{item.contact}}</td>
+          <td v-show="item.content"> {{item.content}} </td>
+        </tr>
+      </table>
     </section>
   </div>
 </template>
@@ -39,9 +69,6 @@ export default {
     resume(){
       return this.$store.state.resume
     }
-  },
-  created(){
-    console.log(this.resume)
   }
 }
 </script>
@@ -53,6 +80,7 @@ export default {
     padding: 2em;
     color: #333; 
     line-height: 1.2;
+    overflow: auto;
     // font-variant: normal; 
     // font-weight: normal;
     ol{ list-style: none; }
@@ -67,18 +95,30 @@ export default {
         }
     }
     section[data-name="profile"]{
-      li + li { margin-top: 1em; }
+      > h1{ margin: .1em 0; font-size: 4em; }
+    }
+    section[data-name="workHistory"],
+    section[data-name="projects"],
+    section[data-name="awards"]{
+      li + li { 
+        margin-top: 1em; 
+        }
       li {
-        h3{
-          border-bottom: 1px solid #999; 
-          padding-bottom: .3em; 
-          margin-bottom: .3em; 
+        h3{ 
+        border-bottom: 1px solid #999; 
+        padding-bottom: .3em; 
+        margin-bottom: .3em; 
         }
       }
-      section[data-name="education"]{
-        li{
-          line-height: 1.5;
-          }
+    }
+    section[data-name="education"]{
+      li{
+        line-height: 1.5;
+      }
+    }
+    section[data-name="contacts"]{
+      td:first-child{
+        padding-right: 1em;
       }
     }
   }
