@@ -17,19 +17,23 @@
       <li v-for="item in resume.config" v-show="item.field === selected">
         <!--内容以数组形式储存时-->
         <div v-if="resume[item.field] instanceof Array">
-          <div class="subitem" v-for="subitem in resume[item.field]">
+          <div class="subitem" v-for="(subitem,index) in resume[item.field]">
             <div class="resumeField" v-for="(value,key) in subitem">
               <label> {{key}} </label>
-              <input type="text" :value="value">
+              <!--存疑，虽然是数组，但是插值中[]不起作用，要像对象一样用.才能正常使用-->
+              <input type="text" :value="value" @input="changeResumeField(`${item.field}.${index}.${key}`,$event.target.value)">
             </div>
             <hr>
           </div>
         </div>
+
         <!--内容以对象形式储存时-->
         <div v-else class="resumeField" v-for="(value,key) in resume[item.field]">
           <label> {{key}} </label>
-          <input type="text" v-model="resume[item.field][key]">
+          <input type="text" :value="value" @input="changeResumeField(`${item.field}.${key}`,$event.target.value)">
+            对象
         </div>
+   
       </li>
     </ol>   
    </div>
@@ -54,6 +58,12 @@
   },
   // Mutations
   methods: {
+    changeResumeField(path,value){
+      this.$store.commit('updateResume',{
+        path,
+        value
+      })
+    }
   }
 }
 </script>

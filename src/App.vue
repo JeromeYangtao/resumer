@@ -25,7 +25,14 @@ export default {
   store,
   components: {Topbar, ResumeEditor, ResumePreview},
   created(){
+    // 插入SVG的logo
     document.body.insertAdjacentHTML('afterbegin', icons) 
+    // localStorage储存数据,读取数据
+    let state = localStorage.getItem('state')
+     if(state){
+        state = JSON.parse(state) 
+      }
+      this.$store.commit('initState', state)  
   }
 }
 </script>

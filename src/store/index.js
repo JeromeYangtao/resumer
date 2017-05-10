@@ -1,5 +1,8 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
+// 方便查找 resume 的属性
+import objectPath from 'object-path'
+
 Vue.use(Vuex)
 
 // 全局数据源
@@ -53,8 +56,21 @@ export default new Vuex.Store({
         }
     },
     mutations: {
+        initState(state, payload) {
+            // 变化检测问题,添加属性
+            Object.assign(state, payload)
+        },
         switchTab(state, payload) {
             state.selected = payload
+            localStorage.setItem('state', JSON.stringify(state))
+        },
+        // 存疑,{path,value}当一个参数还是解析成两个参数
+        updateResume(state, { path, value }) {
+            // state.resume[field][subfield] = value
+            objectPath.set(state.resume, path, value)
+            localStorage.setItem('state', JSON.stringify(state))
+            let tt = 1
+
         }
     }
 })
