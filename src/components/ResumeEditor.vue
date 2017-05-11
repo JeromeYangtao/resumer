@@ -1,3 +1,4 @@
+// 编辑区组件
 <template>
    <div id="resumeEditor">
     <nav>

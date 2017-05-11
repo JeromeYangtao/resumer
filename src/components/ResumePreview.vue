@@ -1,3 +1,4 @@
+// 预览区组件
 <template>
   <div id="resumePreview">
     <section v-show="resume.profile" data-name="profile">
