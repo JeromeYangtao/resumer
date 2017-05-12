@@ -9,6 +9,10 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         selected: 'profile',
+        user: {
+            id: '',
+            username: ''
+        },
         resume: {
             config: [
                 { field: 'profile', icon: 'id' },
@@ -69,8 +73,10 @@ export default new Vuex.Store({
             // state.resume[field][subfield] = value
             objectPath.set(state.resume, path, value)
             localStorage.setItem('state', JSON.stringify(state))
-            let tt = 1
-
+        },
+        setUser(state, payload) {
+            Object.assign(state.user, payload)
+            console.log(state.user)
         }
     }
 })

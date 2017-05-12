@@ -1,4 +1,4 @@
-// 注册页面组件
+// 注册页面对话框组件
 <template>
   <div class="wrapper" v-show="visible">
     <div class="dialog">
