@@ -19,6 +19,8 @@ import ResumePreview from './components/ResumePreview.vue'
 import icons from './assets/icons.js'
 
 import store from './store/index.js'
+import AV from './lib/leancloud.js'
+import getAVUser from './lib/getAVUser.js'
 
 export default {
   name: 'app',
@@ -33,6 +35,7 @@ export default {
         state = JSON.parse(state) 
       }
       this.$store.commit('initState', state)  
+      this.$store.commit('setUser', getAVUser())
   }
 }
 </script>
