@@ -76,7 +76,7 @@ export default new Vuex.Store({
         },
         setUser(state, payload) {
             Object.assign(state.user, payload)
-            console.log(state.user)
+                // console.log(state.user)
         }
     }
 })

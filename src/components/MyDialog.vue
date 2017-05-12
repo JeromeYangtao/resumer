@@ -53,6 +53,9 @@
       padding: 16px;
       display: flex;
       justify-content: space-between;
+      > .close{
+        cursor: pointer;
+      }
     }
     > main{
       padding: 16px;
