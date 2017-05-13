@@ -22,9 +22,6 @@
         <MyDialog title="登录" :visible="signInDialogVisible" @close="signInDialogVisible = false">
           <SignInForm @success="signIn($event)"/>
         </MyDialog>
-
-        <button class="button primary">保存</button>
-        <button class="button">预览</button>
       </div>
     </div>
   </div>
@@ -117,8 +114,7 @@ export default {
   .actions > a{
     display: flex;
     > .userActions{ 
-      margin-right: 3em;
-      .welcome{
+      >.welcome{
         margin-right: 0.5em;
       }
     }

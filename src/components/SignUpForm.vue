@@ -2,7 +2,7 @@
 <template>
   <div>
     <!--不重载页面-->
-    <form @submit.prevent="signUp">
+    <form @submit.prevent="signUp" class="form">
       <div class="row">
         <label>用户名</label> 
         <input type="text" v-model="formData.username" required>
@@ -53,3 +53,25 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .form{
+    >.row{
+      display: flex;
+      justify-content: space-between;
+      padding: 0.3em 0;
+    }
+    >.actions{
+      display: flex;
+      justify-content: center;
+      >input{
+        padding: 0.5em 2em;
+        background: #1BB8E6;
+        border: none;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+  
+</style>
