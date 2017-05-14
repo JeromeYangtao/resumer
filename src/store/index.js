@@ -16,37 +16,37 @@ export default new Vuex.Store({
         resume: {
             config: [
                 { field: 'profile', icon: 'id' },
-                { field: 'workHistory', icon: 'work' },
                 { field: 'education', icon: 'book' },
                 { field: 'projects', icon: 'heart' },
+                { field: 'workHistory', icon: 'work' },
                 { field: 'awards', icon: 'cup' },
                 { field: 'contacts', icon: 'phone' },
             ],
             profile: {
-                name: '',
-                city: '',
-                title: '',
-                birthday: ''
+                name: 'Thomson',
+                city: '广州',
+                title: '划水',
+                birthday: '97-05-05'
             },
-            workHistory: [{
-                company: '',
-                content: ``
-            }],
             education: [
-                { school: '', content: '' },
-                { school: '', content: '' },
+                { school: 'Scut', content: '本科' },
+                { school: '附中', content: '中学' },
             ],
             projects: [
-                { name: '', content: '' },
-                { name: '', content: '' },
+                { name: '嘻嘻嘻', content: '不停打出嘻嘻嘻' },
+                { name: '哈哈哈', content: '不停打出哈哈哈' },
             ],
+            workHistory: [{
+                company: 'xxx公司',
+                content: `工作内容主要是划水`
+            }],
             awards: [
-                { name: '', content: '' },
+                { name: '再来一瓶', content: '连续十次获得再来一瓶' },
                 { name: '' },
             ],
             contacts: [
-                { contact: '', content: '' },
-                { contact: '', content: '' },
+                { contact: '手机', content: '13430270856' },
+                { contact: '邮箱', content: 'xxx@xxx' },
             ]
         }
     },
