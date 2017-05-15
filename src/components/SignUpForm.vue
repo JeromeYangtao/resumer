@@ -60,16 +60,33 @@ export default {
       display: flex;
       justify-content: space-between;
       padding: 0.3em 0;
+      >input{
+        min-height: 2em;
+        margin: .5em 0;
+      }
+      >label{
+        line-height: 2em;
+      }
     }
     >.actions{
       display: flex;
       justify-content: center;
       >input{
+        box-sizing: border-box;
         padding: 0.5em 2em;
         background: #1BB8E6;
         border: none;
         color: white;
         cursor: pointer;
+        border-radius: 15px;
+        transition: 1s;
+        border:2px solid #1BB8E6;
+      }
+      >input:hover{
+        box-sizing: border-box;
+        background: #0D90F0;
+        border:2px solid #1BB8E6;
+        color: black;
       }
     }
   }

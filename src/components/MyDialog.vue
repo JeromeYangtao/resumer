@@ -3,7 +3,7 @@
   <div class="dialogWrapper" v-show="visible">
     <div class="dialog">
       <header>{{title}}
-        <span class="close" @click="close">X</span>
+          <span class="close" @click="close">X</span>     
       </header>
       <main>
         <slot></slot>
@@ -49,16 +49,36 @@
     background: white;
     min-height: 4em;
     min-width: 10em;
+    background: #0D90F0;
+    display: flex;
+    flex-direction: column;
+    // color: white;
     > header{
       padding: 16px;
       display: flex;
       justify-content: space-between;
       > .close{
         cursor: pointer;
+        border: 2px solid white;
+        min-width: 30px;
+        min-height: 26px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 26px;
+        border-radius: 2px;
+        transition: 0.6s;
+      }
+      > .close:hover{
+        background: white;
+        color: #0D90F0;
       }
     }
     > main{
       padding: 16px;
+      >div{
+        margin-top: .5em;
+        text-align: center;
+      }
     }
   }
 </style>
