@@ -14,7 +14,7 @@
         <input type="submit" value="提交">
         <span>{{errorMessage}}</span>
       </div>
-      <div id="advertising">插一条广告</div>
+      <!--<div id="advertising">插一条广告</div>-->
     </form>
     
   </div>
