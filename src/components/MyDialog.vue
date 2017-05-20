@@ -44,12 +44,12 @@
     justify-content: center;
     align-items: center;
   }
-  @media (min-width:200px){
+  
     .dialog{
     background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
     min-height: 4em;
     height: 100%;
-    min-width: 100vw;
+    min-width: 105vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,10 +60,10 @@
       position: relative;
       >.form-logo {
           position: absolute;
-          top: 13rem;
-          left: 10rem;
-          min-width: 12rem;
-          height: 2rem;
+          top: -1rem;
+          left: 30rem;
+          min-width: 18rem;
+          height: 3rem;
           background: #fff;
           transform-origin: 0 100%;
           transform: rotate(-45deg);
@@ -73,19 +73,19 @@
           position: absolute;
           left: 0;
           bottom: 100%;
-          width: 2rem;
-          height: 5.2rem;
+          width: 3rem;
+          height: 7rem;
           background: #fff;
           box-shadow: inset -0.2rem -2rem 2rem rgba(0, 0, 0, 0.2);
          }
       >.close{
           cursor: pointer;
           border: 2px solid white;
-          min-width: 30px;
-          min-height: 26px;
+          min-width: 70px;
+          min-height: 60px;
+          margin-right: 7rem;
           text-align: center;
-          vertical-align: middle;
-          line-height: 26px;
+          line-height: 70px;
           border-radius: 2px;
           transition: 0.6s;
         }
@@ -102,8 +102,8 @@
       }
     }
   }
-  }
-  @media (min-width: 500px){
+  
+  @media (min-device-width: 500px){
     .dialog{
     background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
     min-height: 4em;
@@ -117,6 +117,7 @@
       display: flex;
       justify-content: flex-end;
       position: relative;
+      margin-right: 0;
       >.form-logo {
           position: absolute;
           top: 13rem;
@@ -147,6 +148,7 @@
           line-height: 26px;
           border-radius: 2px;
           transition: 0.6s;
+          margin-right: 0;
         }
       > .close:hover{
           background: white;

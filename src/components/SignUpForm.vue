@@ -134,9 +134,29 @@ export default {
     }
   }
   
+
+  @media (max-device-width:500px){
+    .form{
+      .row{
+        justify-content: center;
+        margin-left: -6rem;
+        >input{
+
+        }
+        >.svg-icon{
+          margin-right: 5rem;
+        }
+      }
+      .actions{
+      >input{
+        width: 20rem;
+        margin-top: 10rem;
+      }
+    }
+    }
+    
+  }
 // svg动画
-
-
 @keyframes animRipple {
   to {
     -webkit-transform: scale(3.5);

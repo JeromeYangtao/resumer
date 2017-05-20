@@ -5,13 +5,13 @@
       <svg class="name svg-icon" viewBox="0 0 20 20">
          <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
       </svg>
-      <input type="text" required v-model="formData.username">
+      <input type="text" required v-model="formData.username" placeholder="Username">
     </div>
     <div class="row">
       <svg class="pass svg-icon" viewBox="0 0 20 20">
         <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
       </svg>
-      <input type="password" required v-model="formData.password">
+      <input type="password" required v-model="formData.password" placeholder="Password">
     </div>
     <div class="actions">
       <input type="submit" value="提交">
@@ -119,6 +119,27 @@ export default {
   }
 }
 
+  @media (max-device-width:500px){
+    .form{
+      .row{
+        justify-content: center;
+        margin-left: -6rem;
+        >input{
+
+        }
+        >.svg-icon{
+          margin-right: 5rem;
+        }
+      }
+      .actions{
+      >input{
+        width: 20rem;
+        margin-top: 10rem;
+      }
+    }
+    }
+    
+  }
   
   
 </style>
