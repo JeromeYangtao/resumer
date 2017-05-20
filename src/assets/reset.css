@@ -8,3 +8,31 @@
 *::before {
     box-sizing: border-box;
 }
+
+
+/*html,
+body {
+    font-size: 62.5%;
+    height: 100%;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    html,
+    body {
+        font-size: 50%;
+    }
+}*/
+
+svg {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    overflow: visible;
+}
+
+input,
+button {
+    outline: none;
+    border: none;
+}
