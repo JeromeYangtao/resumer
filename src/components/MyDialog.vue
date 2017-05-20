@@ -36,7 +36,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../assets/dialog-background.jpg");
+    background-image: url("http://i1.piimg.com/588926/5bf2da3a85f10987.jpg");
     background-size: cover;
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
     margin: 0;
